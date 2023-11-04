@@ -1,16 +1,17 @@
 export const ContactList = ({ contacts, onDelit }) => {
   return (
     <ul>
-      {contacts.map(contact => {
-        return (
-          <li key={contact.id}>
-            <span>{contact.name}</span>: <b>{contact.number}</b>{' '}
-            <button type="button" onClick={() => onDelit(contact.id)}>
-              Remove
-            </button>
-          </li>
-        );
-      })}
+      {contacts !== null &&
+        contacts.map(({ id, name, phone }) => {
+          return (
+            <li key={id}>
+              <span>{name}</span>: <b>{phone}</b>{' '}
+              <button type="button" onClick={() => onDelit(id)}>
+                Remove
+              </button>
+            </li>
+          );
+        })}
     </ul>
   );
 };

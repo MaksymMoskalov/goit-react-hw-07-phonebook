@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
 
 export function ContactForm({ addContact }) {
   const [name, setName] = useState('');
@@ -27,7 +26,6 @@ export function ContactForm({ addContact }) {
     const contactData = {
       name: name,
       number: number,
-      id: nanoid(),
     };
 
     addContact(contactData);
